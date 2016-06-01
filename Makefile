@@ -6,7 +6,7 @@
 #    By: apellegr <apellegr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/05/20 17:10:01 by apellegr          #+#    #+#              #
-#    Updated: 2016/05/20 17:20:40 by apellegr         ###   ########.fr        #
+#    Updated: 2016/06/01 16:58:22 by apellegr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,9 @@ LIBFT_DIR	=	libft/
 LIBFT_LIB	=	$(LIBFT_DIR)libft.a
 
 SRCBASE		=	\
+				flag.c														\
+				flag_char.c													\
+				flag_int.c													\
 				ft_printf.c													\
 				main.c
 
