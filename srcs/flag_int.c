@@ -12,32 +12,6 @@
 
 #include "ft_printf.h"
 
-int		ft_put_nbr_rec(int nb)
-{
-	int		ret;
-
-	ret = 0;
-	if (nb <= -2147483648)
-	{
-		ft_putstr("-2147483648");
-		ret = 11;
-	}
-	else
-	{
-		if (nb < 0)
-		{
-			ft_putchar('-');
-			nb = -nb;
-			ret++;
-		}
-		if (nb / 10 != 0)
-			ret += ft_put_nbr_rec(nb / 10);
-		ret++;
-		ft_putchar('0' + (nb % 10));
-	}
-	return (ret);
-}
-
 int		flag_d(va_list ap)
 {
 	int		ret;
@@ -46,4 +20,14 @@ int		flag_d(va_list ap)
 	nb = va_arg(ap, int);
 	ret = ft_put_nbr_rec(nb);
 	return (ret);
+}
+
+int		flag_u(va_list ap)
+{
+	int		returned_value;
+	int		type;
+
+	type = va_arg(ap, unsigned long int);
+	returned_value = ft_put_nbr_base_uns(type, "0123456789");
+	return (returned_value);
 }

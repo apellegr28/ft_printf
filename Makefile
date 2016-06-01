@@ -6,7 +6,7 @@
 #    By: apellegr <apellegr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/05/20 17:10:01 by apellegr          #+#    #+#              #
-#    Updated: 2016/06/01 16:58:22 by apellegr         ###   ########.fr        #
+#    Updated: 2016/06/01 17:36:12 by apellegr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,8 @@ SRCBASE		=	\
 				flag_char.c													\
 				flag_int.c													\
 				ft_printf.c													\
-				main.c
+				main.c														\
+				utils.c
 
 SRCS		=	$(addprefix $(SRCDIR), $(SRCBASE))
 INCS		=	$(addprefix $(INCDIR), $(INCBASE))

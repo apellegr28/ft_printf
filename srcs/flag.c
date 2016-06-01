@@ -18,4 +18,5 @@ t_func g_tab[] =
 	{'s', &flag_s},
 	{'c', &flag_c},
 	{'%', &flag_percent},
+	{'u', &flag_u},
 };

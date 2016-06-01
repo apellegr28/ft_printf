@@ -16,7 +16,7 @@
 # include "../libft/includes/libft.h"
 # include <stdarg.h>
 
-# define NB_FLAGS	4
+# define NB_FLAGS	5
 
 typedef struct		s_func
 {
@@ -28,9 +28,12 @@ int					ft_printf(const char *restrict format, ...);
 int					flag_s(va_list ap);
 int					flag_d(va_list ap);
 int					flag_c(va_list ap);
+int					flag_u(va_list ap);
 int					flag_ok(char format);
 int					flag_percent(va_list ap);
 int					ft_ret_printf(int i, va_list ap, const char *format);
+int					ft_put_nbr_rec(int nb);
+int					ft_put_nbr_base_uns(long unsigned int nb, char *base);
 
 extern t_func g_tab[NB_FLAGS];
 
