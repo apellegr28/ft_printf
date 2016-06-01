@@ -12,9 +12,12 @@
 
 #include "ft_printf.h"
 #include <stdio.h>
+#include <limits.h>
+#include <locale.h>
 
 int		main(void)
 {
+	setlocale (LC_ALL,"");
 	ft_printf("bonjour\n");
 	ft_printf("int1: %d, int2: %d, int3: %dft_printf:\n", 1, 2, 3);
 	printf("int1: %d, int2: %d, int3: %d\n", 1, 2, 3);

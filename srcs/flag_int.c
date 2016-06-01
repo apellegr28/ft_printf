@@ -26,8 +26,10 @@ int		flag_u(va_list ap)
 {
 	int		returned_value;
 	int		type;
+	char	*base;
 
-	type = va_arg(ap, unsigned long int);
-	returned_value = ft_put_nbr_base_uns(type, "0123456789");
+	base = "0123456789";
+	type = va_arg(ap, int);
+	returned_value = ft_putnbr_base(type, base);
 	return (returned_value);
 }

@@ -38,25 +38,30 @@ int		ft_put_nbr_rec(int nb)
 	return (ret);
 }
 
-int		ft_put_nbr_base_uns(long unsigned int nb, char *base)
+int		ft_putnbr_base(int nb, char *base)
 {
-	int		len;
-	int		i;
-	int		nb_len;
+	int		result;
+	int		div;
+	int		len_base;
+	int		ret;
 
-	nb_len = 0;
-	// if (nb < 0)
-	// {
-	// 	ft_putchar('-');
-	// 	nb *= -1;
-	// 	nb_len++;
-	// }
-	len = ft_strlen(base);
-	i = nb % len;
-	nb = nb / len;
-	if (nb > 0)
-		nb_len = nb_len + ft_put_nbr_base_uns(nb, base);
-	ft_putchar(base[i]);
-	nb_len++;
-	return (nb_len);
+	len_base = ft_strlen(base);
+	ret = 0;
+	if (nb < 0)
+	{
+		nb = -nb;
+	}
+	div = 1;
+	while ((nb / div) >= len_base)
+	{
+		div = div * len_base;
+		ret++;
+	}
+	while (div > 0)
+	{
+		result = (nb / div) % len_base;
+		ft_putchar(base[result]);
+		div = div / len_base;
+	}
+	return (ret);
 }
