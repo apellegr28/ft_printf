@@ -29,7 +29,31 @@ int		flag_u(va_list ap)
 	char	*base;
 
 	base = "0123456789";
-	type = va_arg(ap, int);
+	type = va_arg(ap, unsigned int);
+	returned_value = ft_putnbr_base(type, base);
+	return (returned_value);
+}
+
+int		flag_o(va_list ap)
+{
+	int		returned_value;
+	int		type;
+	char	*base;
+
+	base = "01234567";
+	type = va_arg(ap, unsigned int);
+	returned_value = ft_putnbr_base(type, base);
+	return (returned_value);
+}
+
+int		flag_x(va_list ap)
+{
+	int		returned_value;
+	int		type;
+	char	*base;
+
+	base = "0123456789abcdef";
+	type = va_arg(ap, unsigned int);
 	returned_value = ft_putnbr_base(type, base);
 	return (returned_value);
 }

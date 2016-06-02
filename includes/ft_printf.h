@@ -16,7 +16,7 @@
 # include "../libft/includes/libft.h"
 # include <stdarg.h>
 
-# define NB_FLAGS	5
+# define NB_FLAGS	7
 
 typedef struct		s_func
 {
@@ -29,6 +29,8 @@ int					flag_s(va_list ap);
 int					flag_d(va_list ap);
 int					flag_c(va_list ap);
 int					flag_u(va_list ap);
+int					flag_o(va_list ap);
+int					flag_x(va_list ap);
 int					flag_ok(char format);
 int					flag_percent(va_list ap);
 int					ft_ret_printf(int i, va_list ap, const char *format);
