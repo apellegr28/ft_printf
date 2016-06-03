@@ -6,7 +6,7 @@
 #    By: apellegr <apellegr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/05/20 17:10:01 by apellegr          #+#    #+#              #
-#    Updated: 2016/06/01 17:36:12 by apellegr         ###   ########.fr        #
+#    Updated: 2016/06/03 12:09:37 by apellegr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ LENGTHNAME	=	`printf "%s" $(NAMEBASE) | wc -c`
 MAX_COLS	=	$$(echo "$$(tput cols)-24-$(LENGTHNAME)"|bc)
 
 CC			=	gcc
-FLAGS		=	-Wall -Wextra -Werror
+#FLAGS		=	-Wall -Wextra -Werror
 
 SRCDIR		=	srcs/
 OBJDIR		=	objs/
@@ -28,7 +28,9 @@ LIBFT_LIB	=	$(LIBFT_DIR)libft.a
 SRCBASE		=	\
 				flag.c														\
 				flag_char.c													\
+				flag_conversion.c											\
 				flag_int.c													\
+				flag_p.c													\
 				ft_printf.c													\
 				main.c														\
 				utils.c

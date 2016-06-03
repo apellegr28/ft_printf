@@ -38,19 +38,15 @@ int		ft_put_nbr_rec(int nb)
 	return (ret);
 }
 
-int		ft_putnbr_base(int nb, char *base)
+int		ft_putnbr_base(unsigned int nb, char *base)
 {
 	int		result;
 	int		div;
-	int		len_base;
+	unsigned int		len_base;
 	int		ret;
 
 	len_base = ft_strlen(base);
 	ret = 0;
-	if (nb < 0)
-	{
-		nb = -nb;
-	}
 	div = 1;
 	while ((nb / div) >= len_base)
 	{

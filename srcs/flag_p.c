@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag.c                                             :+:      :+:    :+:   */
+/*   flag_p.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apellegr <apellegr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/31 20:08:06 by apellegr          #+#    #+#             */
-/*   Updated: 2016/05/31 20:08:49 by apellegr         ###   ########.fr       */
+/*   Created: 2016/06/02 19:28:35 by apellegr          #+#    #+#             */
+/*   Updated: 2016/06/02 19:28:54 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-t_func g_tab[] =
+int			flag_p(va_list ap)
 {
-	{'d', &flag_d},
-	{'s', &flag_s},
-	{'c', &flag_c},
-	{'%', &flag_percent},
-	{'u', &flag_u},
-	{'o', &flag_o},
-	{'x', &flag_x},
-	{'X', &flag_X},
-	{'i', &flag_d},
-	{'p', &flag_p},
-	{'b', &flag_b},
-	{'S', &flag_bigs},
-};
+	int					returned_value;
+	unsigned long int	type;
+
+	returned_value = 0;
+	type = va_arg(ap, unsigned long int);
+	if (type == 0)
+	{
+		ft_putstr("(nil)");
+		returned_value = 5;
+	}
+	else
+	{
+		ft_putstr("0x");
+		returned_value = returned_value + 2 + ft_putnbr_base(type, "0123456789abcdef");
+	}
+	return (returned_value);
+}

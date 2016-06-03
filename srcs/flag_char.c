@@ -58,3 +58,28 @@ int		flag_percent(va_list ap)
 	ft_putchar('%');
 	return (returned_value);
 }
+
+int		flag_bigs(va_list ap)
+{
+	int		returned_value;
+	char		*type;
+	int		i;
+
+	i = 0;
+	type = va_arg(ap, char *);
+	returned_value = 0;
+	while (type && type[i])
+	{
+		if (type[i] > 32 && type[i] <= 127)
+			ft_putchar(type[i]);
+		else
+		{
+			ft_putchar('\\');
+			ft_putchar('0');
+			returned_value += 2 + ft_putnbr_base(type[i], "01234567");
+		}
+		returned_value++;
+		i++;
+	}
+	return (returned_value);
+}

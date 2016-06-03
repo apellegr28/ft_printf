@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag.c                                             :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apellegr <apellegr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/05/31 20:08:06 by apellegr          #+#    #+#             */
-/*   Updated: 2016/05/31 20:08:49 by apellegr         ###   ########.fr       */
+/*   Created: 2016/06/01 16:55:41 by apellegr          #+#    #+#             */
+/*   Updated: 2016/06/01 16:58:22 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-t_func g_tab[] =
+/* 
+flag restant: SpDOUC
+				#0-+' '
+				hh h l ll j z
+*/
+
+int		main(void)
 {
-	{'d', &flag_d},
-	{'s', &flag_s},
-	{'c', &flag_c},
-	{'%', &flag_percent},
-	{'u', &flag_u},
-	{'o', &flag_o},
-	{'x', &flag_x},
-	{'X', &flag_X},
-	{'i', &flag_d},
-	{'p', &flag_p},
-	{'b', &flag_b},
-	{'S', &flag_bigs},
-};
+	int		i;
+	int		*j;
+
+	i = 133;
+	j = &i;
+
+
+
+	printf("printf       flag_p: %p\n", j);
+	ft_printf("ft_printf    flag_p: %p\n", j);
+	printf("printf       flag_bids: %S\n", j);
+	ft_printf("ft_printf    flag_bigs: %S\n", j);
+	// printf("printf       flag_b: %b\n", 12);
+	ft_printf("ft_printf    flag_b: %b\n", 7);
+
+	return (0);
+}
