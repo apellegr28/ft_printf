@@ -54,9 +54,14 @@ int			ft_ret_printf(int i, va_list ap, const char *format)
 		{
 			while ((flag_len(format[i + 1])) == 1)
 				i++;
-			if ((j = flag_ok(format[i + 1])) == -1)
-				ft_putchar(format[i]);
-			else
+			// if ((j = flag_ok(format[i + 1])) == -1)
+			// 	ft_putchar(format[i]);
+			// else
+			// {
+			// 	ret += g_tab[j].func(ap) - 1;
+			// 	i++;
+			// }
+			if ((j = flag_ok(format[i + 1])) != -1)
 			{
 				ret += g_tab[j].func(ap) - 1;
 				i++;

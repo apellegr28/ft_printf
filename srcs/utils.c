@@ -61,3 +61,49 @@ int		ft_putnbr_base(unsigned int nb, char *base)
 	}
 	return (ret);
 }
+
+void	ft_putnbr_base_p(unsigned long int nb, char *base, unsigned int base_len)                                                                  
+{
+	if (nb >= base_len)
+		ft_putnbr_base_p(nb / base_len, base, base_len);
+	ft_putchar(base[nb % base_len]);
+}
+
+int		len_wchar(unsigned int c)
+{
+	if (c <= 0x7F)
+		return (1);
+	else if (c <= 0x7FF)
+		return (2);
+	else if (c <= 0xFFFF)
+		return (3);
+	else if (c <= 0x10FFFF)
+		return (4);
+	return (0);
+}
+
+void    ft_print_utf8(unsigned int codepoint)
+{
+	if (codepoint <= 0x7f)
+		ft_putchar((char)(codepoint & 0x7f));
+	else if (codepoint <= 0x7ff)
+	{
+		ft_putchar((char)(0xc0 | (codepoint >> 6)));
+		ft_putchar((char)(0x80 | (codepoint & 0x3f)));
+	}
+	else if (codepoint <= 0xffff)
+	{
+		ft_putchar((char)(0xe0 | (codepoint >> 12)));
+		ft_putchar((char)(0x80 | ((codepoint >> 6) & 0x3f)));
+		ft_putchar((char)(0x80 | (codepoint & 0x3f)));
+	}
+	else if (codepoint <= 0x1fffff)
+	{
+		ft_putchar((char)(0xf0 | (codepoint >> 18)));
+		ft_putchar((char)(0x80 | ((codepoint >> 12) & 0x3f)));
+		ft_putchar((char)(0x80 | ((codepoint >> 6) & 0x3f)));
+		ft_putchar((char)(0x80 | (codepoint & 0x3f)));
+	}
+	else
+	ft_putendl("invalid wchar");
+}

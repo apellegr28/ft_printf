@@ -66,20 +66,10 @@ int		flag_bigs(va_list ap)
 	int		i;
 
 	i = 0;
-	type = va_arg(ap, char *);
+	type = va_arg(ap, unsigned int);
 	returned_value = 0;
-	while (type && type[i])
-	{
-		if (type[i] > 32 && type[i] <= 127)
-			ft_putchar(type[i]);
-		else
-		{
-			ft_putchar('\\');
-			ft_putchar('0');
-			returned_value += 2 + ft_putnbr_base(type[i], "01234567");
-		}
-		returned_value++;
-		i++;
-	}
+	ft_print_utf8(type);
+	returned_value = len_wchar(type);
 	return (returned_value);
 }
+

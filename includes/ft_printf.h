@@ -44,6 +44,9 @@ int					flag_bigs(va_list ap);
 int					ft_ret_printf(int i, va_list ap, const char *format);
 int					ft_put_nbr_rec(int nb);
 int					ft_putnbr_base(unsigned int nb, char *base);
+void				ft_putnbr_base_p(unsigned long int nb, char *base, unsigned int base_len);
+void				ft_print_utf8(unsigned int codepoint);
+int					len_wchar(unsigned int c);
 
 extern t_func g_tab[NB_FLAGS];
 

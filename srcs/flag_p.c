@@ -27,7 +27,8 @@ int			flag_p(va_list ap)
 	else
 	{
 		ft_putstr("0x");
-		returned_value = returned_value + 2 + ft_putnbr_base(type, "0123456789abcdef");
+		ft_putnbr_base_p((unsigned long int)type, "0123456789abcdef", 16); 
 	}
+	//returned_value = returned_value + 2;
 	return (returned_value);
 }
