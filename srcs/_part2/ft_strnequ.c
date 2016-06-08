@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   strnequ.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apellegr <apellegr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/01 16:55:41 by apellegr          #+#    #+#             */
-/*   Updated: 2016/06/01 16:58:22 by apellegr         ###   ########.fr       */
+/*   Created: 2014/02/22 14:23:48 by mblet             #+#    #+#             */
+/*   Updated: 2015/01/24 18:35:54 by mblet            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <stdio.h>
-#include <wchar.h>
-#include <stdint.h>
-#include <locale.h>
+#include "libft.h"
 
-/* 
-flag restant: SDOUC
-				#0-+' '
-				hh h l ll j z
-*/
-
-int		main(void)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-
-  wchar_t wc = L'ఫ';
-  write(1, "a\n", 2);
-  //printf("bigS:   %S", wc);
-  ft_printf("bigS: %S", wc);
-
-
-
-	return (0);
+	if (n == 0)
+		return (1);
+	if (s1 == NULL || s2 == NULL)
+		return (0);
+	if (ft_strncmp(s1, s2, n))
+		return (0);
+	return (1);
 }

@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_p.c                                           :+:      :+:    :+:   */
+/*   memcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apellegr <apellegr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/02 19:28:35 by apellegr          #+#    #+#             */
-/*   Updated: 2016/06/02 19:28:54 by apellegr         ###   ########.fr       */
+/*   Created: 2014/03/12 16:46:01 by mblet             #+#    #+#             */
+/*   Updated: 2015/01/25 12:21:19 by mblet            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <unistd.h>
 
-int			flag_p(va_list ap)
+void	*ft_memcpy(void *s1, const void *s2, size_t n)
 {
-	int					returned_value;
-	unsigned long int	type;
+	size_t			i;
+	char			*c1;
+	const char		*c2;
 
-	returned_value = 0;
-	type = va_arg(ap, unsigned long int);
-	if (type == 0)
+	i = 0;
+	c1 = s1;
+	c2 = s2;
+	while (i < n)
 	{
-		ft_putstr("(nil)");
-		returned_value = 5;
+		c1[i] = c2[i];
+		i++;
 	}
-	else
-	{
-		ft_putstr("0x");
-		ft_putnbr_base_p((unsigned long int)type, "0123456789abcdef", 16); 
-	}
-	//returned_value = returned_value + 2;
-	return (returned_value);
+	return (s1);
 }

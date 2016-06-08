@@ -1,47 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flag_int.c                                         :+:      :+:    :+:   */
+/*   flag_long.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apellegr <apellegr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/01 15:13:21 by apellegr          #+#    #+#             */
-/*   Updated: 2016/06/01 15:13:22 by apellegr         ###   ########.fr       */
+/*   Created: 2016/06/08 14:00:56 by apellegr          #+#    #+#             */
+/*   Updated: 2016/06/08 14:07:06 by apellegr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		flag_d(va_list ap)
+int		flag_bigd(va_list ap)
 {
-	int		ret;
-	int		nb;
+	int				ret;
+	long int		nb;
 
-	nb = va_arg(ap, int);
+	nb = va_arg(ap, long int);
 	ret = ft_put_nbr_rec(nb);
 	return (ret);
 }
 
-int		flag_u(va_list ap)
+int		flag_bigu(va_list ap)
 {
-	int		returned_value;
-	int		type;
-	char	*base;
+	int				returned_value;
+	long int		type;
+	char			*base;
 
 	base = "0123456789";
-	type = va_arg(ap, unsigned int);
-	returned_value = ft_putnbr_base(type, base);
+	type = va_arg(ap, unsigned long int);
+	returned_value = ft_putnbr_long_base(type, base);
 	return (returned_value);
 }
 
-int		flag_X(va_list ap)
+int		flag_bigo(va_list ap)
 {
-	int		returned_value;
-	int		type;
-	char	*base;
+	int				returned_value;
+	long int		type;
+	char			*base;
 
-	base = "0123456789ABCDEF";
-	type = va_arg(ap, unsigned int);
-	returned_value = ft_putnbr_base(type, base);
+	base = "01234567";
+	type = va_arg(ap, unsigned long int);
+	returned_value = ft_putnbr_long_base(type, base);
 	return (returned_value);
 }

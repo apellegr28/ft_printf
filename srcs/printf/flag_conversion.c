@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int			flag_b(va_list ap)
+int		flag_b(va_list ap)
 {
 	int					returned_value;
 	unsigned long int	type;
